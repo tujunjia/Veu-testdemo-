@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue起步</title>
+    <script src="./vue.js"></script>
+
+</head>
+<body>
+    <div class="content">
+        <h2>{{ info }}</h2>
+    </div>
+
+    <!-- vue加css属性 -->
+    <div class="app">
+        <p v-bind:title = "message">鼠标移上去</p>
+    </div>
+
+    <!-- Vue  if的用法 -->
+    <div>
+        <p id="app2" v-if="see">现在你能看见我</p>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+    el: '.content',
+    data: {
+        info: 'Hello Vue! 涂峻嘉'
+    }
+    })
+
+    var app1 =  new Vue({
+        el: '.app',
+        data: {
+            message: "时间："+ new Date().toLocaleString(),
+        }
+    });
+    // Vue  if的用法
+    var app_if = new Vue({
+        el: "#app2",
+        data:{
+            see: true
+        }
+    });
+</script>
+</html>
